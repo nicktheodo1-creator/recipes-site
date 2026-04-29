@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sugaronic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>🍰 Recipes</h1>
+
+<div class="container">
+
+{% for key, r in recipes.items() %}
+    <div class="card">
+        <h2>{{ r.title }}</h2>
+        <a href="/recipe/{{ key }}">
+            <button>View</button>
+        </a>
+    </div>
+{% endfor %}
+
+</div>
+
+</body>
+</html>
